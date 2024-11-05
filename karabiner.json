@@ -4,7 +4,29 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Right Command sends Control + F20 on tap to toggle numpad layer, acts as Command on hold",
+                        "description": "Right Option + Delete sends Forward Delete",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": ["right_option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "delete_forward" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right Command sends Control + F20 on tap to toggle numpad layer",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -127,7 +149,119 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock (Right Option) + 5 sends Control + Shift + F16",
+                        "description": "Right Option + H sends Control + W + H",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["right_option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["left_control"]
+                                    },
+                                    { "key_code": "h" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right Option + J sends Control + W + J",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["right_option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["left_control"]
+                                    },
+                                    { "key_code": "j" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right Option + K sends Control + W + K",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["right_option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["left_control"]
+                                    },
+                                    { "key_code": "k" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right Option + L sends Control + W + L",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["right_option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["left_control"]
+                                    },
+                                    { "key_code": "l" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right Option + 5 sends Control + Shift + F16",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -154,7 +288,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock (Right Option) + 4 sends Control + F16",
+                        "description": "Right Option + 4 sends Control + F16",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -181,7 +315,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock (Right Option) + 3 sends Control + Shift + F13",
+                        "description": "Right Option + 3 sends Control + Shift + F13",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -208,7 +342,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock (Right Option) + 2 sends Control + F13",
+                        "description": "Right Option + 2 sends Control + F13",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -235,7 +369,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock (Right Option) + 1 sends F13, F16, and F17",
+                        "description": "Right Option + 1 sends F13, F16, and F17",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -261,7 +395,7 @@
                         ]
                     },
                     {
-                        "description": "Map Caps Lock key to Right Option (always, never interact with Caps Lock state)",
+                        "description": "Map Caps Lock key to Right Option",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -278,7 +412,7 @@
                         ]
                     },
                     {
-                        "description": "Right Shift sends Control+Shift+F20 on tap for Caps Lock toggle, acts as Shift on hold (internal keyboard only)",
+                        "description": "Right Shift sends Control+Shift+F20 on tap for Caps Lock toggle, acts as Shift on hold.",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -304,6 +438,21 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 5120,
+                        "vendor_id": 12771
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "f24" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        }
+                    ]
+                }
+            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
